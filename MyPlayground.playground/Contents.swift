@@ -1,16 +1,25 @@
 import UIKit
 
-let a = 25
-let b = 10
-let c = 1
+var str = "Hello, playground"
 
-if (a <= 10 || b > 5) || c != 1  {
-    print("branch 1")
-}else if a < 15 {
-    print("branch 2")
-}else if a > 30 {
-    print("branch 3")
-}else{
-    print("catch all")
-    
+let chr = "b"
+
+str = "Tom"
+
+switch chr {
+case "a":
+    print("this is the an a")
+case "b":
+    print("this is a b or c")
+default:
+    print("this is the fallback")
 }
+
+var sum = 0
+
+for counter in 1...5 {
+    
+    sum += counter
+}
+ print(sum)
+
