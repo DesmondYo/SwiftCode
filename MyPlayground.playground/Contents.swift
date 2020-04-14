@@ -1,25 +1,42 @@
 import UIKit
 
-var str = "Hello, playground"
+    var str = "Hello, playground"
 
-let chr = "b"
+    var counter = -5
 
-str = "Tom"
+    while counter > 0 {
 
-switch chr {
-case "a":
-    print("this is the an a")
-case "b":
-    print("this is a b or c")
-default:
-    print("this is the fallback")
+        print("Hello from while loop ")
+        counter -= 1;
 }
 
-var sum = 0
+    var counter2 = -5
 
-for counter in 1...5 {
+    repeat{
+        print("Hello from repeat while loop")
+        counter2 -= 1;
+    } while counter2 > 0
+
+
+    func addTwoNumbers() {
     
-    sum += counter
+    let a = 1
+    let b = 2
+    let c = a + b
+    
+    print (c)
+    
 }
- print(sum)
+    addTwoNumbers()
 
+    func subtractTwoNumbers() {
+    
+    let d = 10
+    let e = 5
+    let f = d - e
+    
+    print (f)
+        
+}
+
+    subtractTwoNumbers()
