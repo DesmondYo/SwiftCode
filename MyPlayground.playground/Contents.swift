@@ -1,7 +1,8 @@
 import UIKit
 
 
-class Employee: {
+
+class Employee {
     var name = ""
     var salary = 10
     var role = ""
@@ -61,5 +62,3 @@ m.role = "CFO"
 m.teamSize = 10
 m.doWork()
 m.firePeople()
-
-var e = Employee
