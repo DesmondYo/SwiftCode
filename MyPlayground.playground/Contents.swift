@@ -1,16 +1,65 @@
 import UIKit
 
-    var str = "Hello, playground"
 
-func addTwoNumbers(using number1: Int, and number2: Int)-> Int {
+class Employee: {
+    var name = ""
+    var salary = 10
+    var role = ""
     
-    let a = number1
-    let b = number2
-    let c = a + b
-   
-    return c
-
+    
+    func doWork() {
+        print ("Hello my name is " + name + " and I am doing work.")
+        salary += 1
+    }
 }
 
-let sum = addTwoNumbers(using: 10, and: 10)
-print(sum)
+
+
+let a: Int = 10
+let b: String = "Dez"
+var c: Employee = Employee()
+
+c.name = "Jay"
+c.role = "Manager"
+c.salary = 1000
+print (c.salary)
+print (c.name)
+print (c.role)
+
+c.doWork()
+
+var d = Employee()
+d.name = "Sara"
+d.role = "CEO"
+d.salary = 5000
+
+d.doWork()
+
+
+class Manager: Employee {
+    
+    var teamSize = 0
+    
+    override func doWork() {
+        super.doWork()
+        
+        print("I am managing people")
+        salary += 2
+    }
+    
+    func firePeople() {
+        print ("I am firing people")
+    }
+    
+    
+}
+
+var m = Manager()
+m.name = "Jim"
+m.salary = 10000
+m.role = "CFO"
+m.teamSize = 10
+m.doWork()
+m.firePeople()
+
+var e = Employee
