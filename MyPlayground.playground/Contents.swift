@@ -1,57 +1,41 @@
 import UIKit
 
 
-class Person {
-    var name = ""
+class giftForAnniversarry {
     
-    init() {
-        
-    }
-    
-    init(_ name: String) {
-        self.name = name
+    func surprise() -> Int {
+        return Int.random(in: 1...10)
     }
 }
 
-class Employee: Person {
-    
-    var salary = 0
-    var role = ""
-    
-    override init (_ name: String) {
-        
-        //This is calling the init (_ name:String) function of the Person class
-        super.init(name)
-        
-        //Additional init code
-        self.role = "Anaylst"
-    }
-    
-    func doWork () {
-        print ("Hello my name is " + name + " and I am doing work")
-        salary += 1
-    }
+let present: giftForAnniversarry? = giftForAnniversarry()
+
+//Check the optional to see if it contains an object
+
+if present != nil {
+    //it contains an object
+    //call the surprise function
+   print (present!.surprise())
 }
 
-class Manager: Employee {
+//Optional binding
+if let acutalPresent = present {
     
-    var teamSize = 0
-    
-    override func doWork() {
-        super.doWork()
-        
-        print("I am managing people")
-        salary += 2
-    }
-    
-    func firePeople () {
-        print("I am firing people")
-    }
+    print(acutalPresent.surprise())
 }
 
-let myPerson = Person("Tom")
-print(myPerson.name)
+//Optional chaining
+present?.surprise()
 
-let myEmployee = Employee("Joe")
-print(myEmployee.role)
-print(myEmployee.name)
+
+
+var a: String = "Hey"
+
+var b: String? = nil
+
+//c can store a string or nil, but it is wrapped
+var c: String?
+
+//d can store a string or nil, but it is alerady unwrapped
+var d: String!
+
