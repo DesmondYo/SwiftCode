@@ -1,41 +1,16 @@
 import UIKit
 
 
-
 class Employee {
     var name = ""
-    var salary = 10
+    var salary = 0
     var role = ""
     
-    
-    func doWork() {
-        print ("Hello my name is " + name + " and I am doing work.")
+    func doWork () {
+        print ("Hello my name is " + name + " and I am doing work")
         salary += 1
     }
 }
-
-
-
-let a: Int = 10
-let b: String = "Dez"
-var c: Employee = Employee()
-
-c.name = "Jay"
-c.role = "Manager"
-c.salary = 1000
-print (c.salary)
-print (c.name)
-print (c.role)
-
-c.doWork()
-
-var d = Employee()
-d.name = "Sara"
-d.role = "CEO"
-d.salary = 5000
-
-d.doWork()
-
 
 class Manager: Employee {
     
@@ -48,17 +23,37 @@ class Manager: Employee {
         salary += 2
     }
     
-    func firePeople() {
-        print ("I am firing people")
+    func firePeople () {
+        print("I am firing people")
     }
-    
     
 }
 
+let a: Int = 10
+let b: String = "Ted"
+let c: Employee = Employee()
+
+c.name = "Tom"
+c.role = "Art Director"
+c.salary = 1000
+print(c.salary)
+
+c.doWork()
+
+var d = Employee()
+d.name = "Sarah"
+d.role = "CEO"
+d.salary = 10000
+
+d.doWork()
+
 var m = Manager()
-m.name = "Jim"
-m.salary = 10000
-m.role = "CFO"
-m.teamSize = 10
+m.name = "Maggie"
+m.role = "VP"
+m.salary = 5000
+
 m.doWork()
 m.firePeople()
+
+var e = Employee()
+
