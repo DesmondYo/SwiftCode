@@ -1,10 +1,31 @@
 import UIKit
 
 
-class Employee {
+class Person {
     var name = ""
+    
+    init() {
+        
+    }
+    
+    init(_ name: String) {
+        self.name = name
+    }
+}
+
+class Employee: Person {
+    
     var salary = 0
     var role = ""
+    
+    override init (_ name: String) {
+        
+        //This is calling the init (_ name:String) function of the Person class
+        super.init(name)
+        
+        //Additional init code
+        self.role = "Anaylst"
+    }
     
     func doWork () {
         print ("Hello my name is " + name + " and I am doing work")
@@ -26,34 +47,11 @@ class Manager: Employee {
     func firePeople () {
         print("I am firing people")
     }
-    
 }
 
-let a: Int = 10
-let b: String = "Ted"
-let c: Employee = Employee()
+let myPerson = Person("Tom")
+print(myPerson.name)
 
-c.name = "Tom"
-c.role = "Art Director"
-c.salary = 1000
-print(c.salary)
-
-c.doWork()
-
-var d = Employee()
-d.name = "Sarah"
-d.role = "CEO"
-d.salary = 10000
-
-d.doWork()
-
-var m = Manager()
-m.name = "Maggie"
-m.role = "VP"
-m.salary = 5000
-
-m.doWork()
-m.firePeople()
-
-var e = Employee()
-
+let myEmployee = Employee("Joe")
+print(myEmployee.role)
+print(myEmployee.name)
