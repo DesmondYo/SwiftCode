@@ -1,33 +1,39 @@
 import UIKit
 
-class Person {
+var a = "Dog"
+var b = "Cat"
+var c = "Parrot"
 
-    var name:String
-    var netWorth:Int?
-    var gender:String!
-    
-    //Designated initializer because it makes sure that all properties are initialized
-    init() {
-        name = "None"
-    }
-    
-    convenience init(_ gender:String, netWorth:Int) {
-        //Call the designated initializer to ensure that the object is ready to go
-        self.init()
-        
-        //Set any other properties or custom code to initialize for this scenario
-        self.gender = gender
-        self.netWorth = netWorth
-    }
+a = "My" + a
+
+var myArray:[String] = ["Dog", "Cat","Parrot"]
+
+//for counter in 0...myArray.count-1 {
+//    myArray[counter] = "My " + myArray[counter]
+//    //print(myArray[counter])
+//}
+
+for item in myArray {
+    print(item)
 }
-// Creating a new person obj
-let a = Person()
 
-//Creating a new rich person obj
-let b = Person("Male", netWorth: 50000)
-let c = Person("Female", netWorth: 100000)
+//How to declare an empty array
+var emptyArray:[String] = []
+var emptyArray2 = [String]()
 
+//Add items
 
+myArray.append("Deer")
 
+myArray.insert("Frog", at: 0)
 
+myArray += ["Frog" , "Bear"]
+    
+for item in myArray {
+print(item)
+}
+
+//Remove items
+myArray.remove(at: 0)
+ 
 
