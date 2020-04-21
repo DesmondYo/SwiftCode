@@ -1,41 +1,69 @@
 import UIKit
 
 
-class giftForAnniversarry {
+class Person {
+    var name = ""
     
-    func surprise() -> Int {
-        return Int.random(in: 1...10)
+    init() {
+        
+    }
+    
+    init(_ name:String) {
+        self.name = name
     }
 }
 
-let present: giftForAnniversarry? = giftForAnniversarry()
-
-//Check the optional to see if it contains an object
-
-if present != nil {
-    //it contains an object
-    //call the surprise function
-   print (present!.surprise())
-}
-
-//Optional binding
-if let acutalPresent = present {
+class Employee:Person {
     
-    print(acutalPresent.surprise())
+    var salary = 0
+    var role = ""
+    
+    override init (_ name:String) {
+        
+        //This is calling the init (_ name:String) function of the Person class
+        super.init(name)
+        
+        //Additional init code
+        self.role = "Anaylst"
+    }
+    
+    func doWork () {
+        print ("Hello my name is " + name + " and I am doing work")
+        salary += 1
+    }
 }
 
-//Optional chaining
-present?.surprise()
+class Manager: Employee {
+    
+    var teamSize = 0
+    var bonus: Int {
+        
+        // This is  a computed property
+        //When it's acccessed, the code in here will run
+        //Then we'll return the value
+        return teamSize * 1000
+    }
+    
+    init(_ name:String, _ team:Int) {
+        
+        //This calls the init in the employee class
+        super.init(name)
+        
+        //Additonal init work
+        teamSize = team
+    }
+    
+    override func doWork() {
+        super.doWork()
+        
+        print("I am managing people")
+        salary += 2
+    }
+    
+    func firePeople () {
+        print("I am firing people")
+    }
+}
 
-
-
-var a: String = "Hey"
-
-var b: String? = nil
-
-//c can store a string or nil, but it is wrapped
-var c: String?
-
-//d can store a string or nil, but it is alerady unwrapped
-var d: String!
-
+let m = Manager("Kate", 11)
+print(m.bonus)
